@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { createUseStyles } from 'react-jss';
 import { NavLink } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ interface NavOptionProps {
   to: string;
   icon: string;
   name: string;
+  children: ReactNode
 }
 
 export const NavOption: React.FC<NavOptionProps> = ({
