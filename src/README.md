@@ -34,7 +34,7 @@ In order for a user to be able to find a Pokémon quickly, they should be able t
 
 ---
 ### Dialog for Pokémon Details
-When a user wants to see more information about a Pokémon, they should be able to click on a list item and see a dialog/modal with that information. Feel free to use any 3rd party component library for the dialog/modal so you don't have to worry about building one. The [Mui Dialog](https://mui.com/components/dialogs/) is a good option if you don't already have on you like.
+When a user wants to see more information about a Pokémon, they should be able to click on a list item and see a dialog/modal with that information. Feel free to use any 3rd party component library for the dialog/modal so you don't have to worry about building one. The [Mui Dialog](https://mui.com/components/dialogs/) is a good option if you don't already have one you like.
 
 1. The dialog/modal will be route dependent meaning that whether or not it's shown and what Pokémon's details it's showing is based on the route. This should use `react-router`. React router is already set up in the app.
 1. What additional you display and how you display it is up to you.
