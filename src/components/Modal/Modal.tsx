@@ -1,14 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { createUseStyles } from "react-jss";
-import { useNavigate, useParams } from "react-router-dom"
+import { NavigateFunction, useNavigate } from "react-router-dom"
 
-type Props = {
+type ModalProps = {
   children: React.ReactNode
 }
 
-export const Modal = ({ children }: Props) => {
+export const Modal = ({ children }: ModalProps) => {
   const classes = useStyles();
-  const navigate = useNavigate()
+  const navigate: NavigateFunction = useNavigate()
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -18,7 +18,6 @@ export const Modal = ({ children }: Props) => {
     }
 
     document.addEventListener('keydown', handleKeyDown)
-
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [])
 
@@ -51,7 +50,7 @@ const useStyles = createUseStyles(
       textAlign: 'center',
       padding: '32px',
       boxSizing: 'border-box',
-      background: 'rgba(1, 1, 1, 0.6)',
+      background: 'rgba(0, 0, 0, 0.7)',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
@@ -64,7 +63,6 @@ const useStyles = createUseStyles(
       padding: '4rem',
       color: 'black',
       position: 'relative',
-      border: '1px solid red',
     },
     closeButton: {
       position: 'absolute',
@@ -96,5 +94,5 @@ const useStyles = createUseStyles(
       },
     }
   },
-  { name: 'PokemonList' }
+  { name: 'Modal' }
 );
