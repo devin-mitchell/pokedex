@@ -1,4 +1,5 @@
 import { createUseStyles } from "react-jss";
+import { Link } from "react-router-dom";
 
 
 type Props = {
@@ -13,7 +14,7 @@ export const PokemonListItem = ({ types, number, name, image }: Props) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} onClick={() => console.log(`${number} clicked`)}>
+    <Link to={`/pokemon/${name}`} className={classes.root}>
       <>
         <img src={image} className={classes.image} alt={name} />
         <div>
@@ -27,7 +28,7 @@ export const PokemonListItem = ({ types, number, name, image }: Props) => {
           </div>
         </div>
       </>
-    </div >
+    </Link >
   );
 };
 

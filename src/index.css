@@ -41,6 +41,9 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #4B5066 #171E2b;
 }
+a {
+  text-decoration: none; 
+}
 ::-webkit-scrollbar-track {
   background: #171E2b;
 }
