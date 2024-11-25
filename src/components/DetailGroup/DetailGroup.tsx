@@ -1,18 +1,12 @@
 import { createUseStyles } from "react-jss"
 
-export const DetailGroup = ({ detail, value }: { detail: string, value: string | string[] }) => {
-  const classes = useStyles();
+type DetailGroupProps = {
+  detail: string,
+  value: string | string[]
+}
 
-  // if (Array.isArray(value)) {
-  //   return (
-  //     <div className={classes.detailGroup}>
-  //       <>
-  //         <p className={classes.detail}>{`${detail.toUpperCase()}: `}</p>
-  //         <p className={classes.value}>{value.join(', ')}</p>
-  //       </>
-  //     </div>
-  //   )
-  // }
+export const DetailGroup = ({ detail, value }: DetailGroupProps) => {
+  const classes = useStyles();
 
   return (
     <div className={classes.detailGroup}>
@@ -20,7 +14,6 @@ export const DetailGroup = ({ detail, value }: { detail: string, value: string |
       <p className={classes.value}>{Array.isArray(value) ? value.join(', ') : value}</p>
     </div>
   )
-
 }
 
 const useStyles = createUseStyles(

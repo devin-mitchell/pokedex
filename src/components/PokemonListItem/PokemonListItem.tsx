@@ -1,8 +1,7 @@
 import { createUseStyles } from "react-jss";
 import { Link } from "react-router-dom";
 
-
-type Props = {
+type PokemonListItemProps = {
   id: string
   name: string
   image: string
@@ -10,7 +9,7 @@ type Props = {
   types: string[]
 }
 
-export const PokemonListItem = ({ types, number, name, image }: Props) => {
+export const PokemonListItem = ({ types, number, name, image }: PokemonListItemProps) => {
   const classes = useStyles();
 
   return (
@@ -21,9 +20,11 @@ export const PokemonListItem = ({ types, number, name, image }: Props) => {
           <h2>{name} - {number}</h2>
           <div className={classes.types}>
             {types.map((type, i) => {
-              return <div key={`${number} - ${type}`} className={classes.type}>{
-                i === types.length - 1 ? type : `${type} / `
-              }</div>
+              return (
+                <div key={`${number} - ${type}`} className={classes.type}>
+                  {i === types.length - 1 ? type : `${type} / `}
+                </div>
+              )
             })}
           </div>
         </div>

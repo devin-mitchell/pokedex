@@ -1,6 +1,5 @@
-import { useEffect } from "react"
 import { createUseStyles } from "react-jss"
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useGetPokemon } from "../../hooks/useGetPokemon"
 import { DetailGroup } from "../DetailGroup"
 import { Modal } from "../Modal"
@@ -8,30 +7,12 @@ import { Modal } from "../Modal"
 export const PokemonModal = () => {
   const classes = useStyles();
   const { name } = useParams()
-  // const navigate = useNavigate()
   const { data, loading } = useGetPokemon({ name })
-
-
-  // TODO: implement "next pokemon" functionality
-  // const handleArrowDown = (e: KeyboardEvent) => {
-  //   console.log('key: ', e.key)
-  //   if (e.key === 'ArrowRight') {
-  //     const currNum = data?.pokemon?.number
-  //     const next = (parseInt(currNum) + 1).toString()
-  //     const nextNumber = next.padStart(3, '0')
-  //     navigate(`/pokemon/${nextNumber}`)
-  //   }
-  // }
-  // useEffect(() => {
-  //   document.addEventListener('keydown', handleArrowDown)
-
-  //   return () => document.removeEventListener('keydown', handleArrowDown)
-  // }, [])
-
 
   if (loading) {
     return <div>...Loading</div>
   }
+
   const { classification,
     fleeRate,
     height,
