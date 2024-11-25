@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { useGetPokemon } from "../../hooks/useGetPokemon"
 import { DetailGroup } from "../DetailGroup"
 import { Modal } from "../Modal"
+import { Skeleton } from "./Skeleton"
 
 export const PokemonModal = () => {
   const classes = useStyles();
@@ -10,7 +11,7 @@ export const PokemonModal = () => {
   const { data, loading } = useGetPokemon({ name })
 
   if (loading) {
-    return <div>...Loading</div>
+    return <Skeleton />
   }
 
   const { classification,
